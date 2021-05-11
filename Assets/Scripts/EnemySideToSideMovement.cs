@@ -9,21 +9,13 @@ public enum MovementDirection
 
 }
 
-public class EnemySideToSideMovement : MonoBehaviour
+public class EnemySideToSideMovement : MovementScript
 {
     private bool moveRight = true;
     private bool moveuP = true;
     public MovementDirection type;
 
-    private ShipScript ship;
-
-    [SerializeField] private float margin;
-
-    private void Start()
-    {
-        ship = GetComponent<ShipScript>();
-    }
-
+    [SerializeField] private float margin = .5f;
 
     private void Update()
     {

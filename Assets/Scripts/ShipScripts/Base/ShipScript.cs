@@ -6,32 +6,28 @@ public class ShipScript : MonoBehaviour
 {
     public int hp;
     public int collisionDamage;
-    public ParticleSystem bullet;
-    [SerializeField] private float speed;
+    [SerializeField] private float speed = 150;
     private Rigidbody2D rb2d;
-    [HideInInspector]public Vector2 screenSpace;
+    [HideInInspector] public Vector2 screenSpace;
     private SpriteRenderer spriteRenderer;
+    private Color originalColor;
 
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
         screenSpace = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
-    }
-
-    public void Shoot()
-    {
-        bullet.Play();
-    }
-
-    public void StopShoot()
-    {
-        bullet.Stop();
     }
 
     public void TakeDamage(int damageTaken)
     {
         hp -= damageTaken;
+
+        if (gameObject.activeInHierarchy)
+            StartCoroutine(SetColor(Color.red));
+
+
         if (hp <= 0)
             Die();
     }
@@ -76,5 +72,13 @@ public class ShipScript : MonoBehaviour
 
         TakeDamage(collision.gameObject.GetComponent<ShipScript>().collisionDamage);
 
+    }
+
+
+    IEnumerator SetColor(Color _color)
+    {
+        spriteRenderer.color = _color;
+        yield return new WaitForSeconds(.1f);
+        spriteRenderer.color = originalColor;
     }
 }

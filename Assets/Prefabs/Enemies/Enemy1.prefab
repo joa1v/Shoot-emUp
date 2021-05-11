@@ -4841,6 +4841,8 @@ GameObject:
   - component: {fileID: 1831496970137658987}
   - component: {fileID: 2970268337018897173}
   - component: {fileID: 1399896268313267725}
+  - component: {fileID: 3494841150743734813}
+  - component: {fileID: 2398358818067521770}
   m_Layer: 9
   m_Name: Enemy1
   m_TagString: Untagged
@@ -5069,10 +5071,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5235abb6b6efe3f499102cf457fae65e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
-  collisionDamage: 0
-  bullet: {fileID: 0}
-  speed: 0
+  hp: 50
+  collisionDamage: 25
+  speed: 150
   screenSpace: {x: 0, y: 0}
 --- !u!114 &1399896268313267725
 MonoBehaviour:
@@ -5086,4 +5087,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80df7c9b4f99e73499369a57174bb838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ship: {fileID: 0}
   type: 0
+  margin: 0.5
+--- !u!114 &3494841150743734813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8957544955366822737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c8d65aa27ba7cd4989370ce6fd91937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: {fileID: 0}
+  bullet: {fileID: 0}
+  shootCoolDown: 0
+--- !u!114 &2398358818067521770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8957544955366822737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b9348e5bbe61f499a9abaf60d51995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundBank: {fileID: 11400000, guid: e10a3dd169076a34cbeeb80fee2c2f2b, type: 2}

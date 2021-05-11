@@ -2,14 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MovementScript
 {
-    private ShipScript ship;
-
-    private void Start()
-    {
-        ship = GetComponent<ShipScript>();
-    }
 
     void Update()
     {

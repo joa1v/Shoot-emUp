@@ -11,9 +11,13 @@ GameObject:
   - component: {fileID: 1766876522410070360}
   - component: {fileID: 1766876522410070361}
   - component: {fileID: 1766876522410070366}
-  - component: {fileID: 1766876522410070367}
-  - component: {fileID: 6314299078770088899}
   - component: {fileID: 464879247103405041}
+  - component: {fileID: 1766876522410070367}
+  - component: {fileID: 7754942708029057914}
+  - component: {fileID: 5747372484165936710}
+  - component: {fileID: 2237753506438774680}
+  - component: {fileID: 520025525024363998}
+  - component: {fileID: 7124117413675139484}
   m_Layer: 9
   m_Name: Enemy2
   m_TagString: Untagged
@@ -113,40 +117,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.84, y: 0.68}
   m_EdgeRadius: 0
---- !u!50 &1766876522410070367
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766876522410070362}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &6314299078770088899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766876522410070362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49b9348e5bbe61f499a9abaf60d51995, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundBank: {fileID: 11400000, guid: e10a3dd169076a34cbeeb80fee2c2f2b, type: 2}
 --- !u!82 &464879247103405041
 AudioSource:
   m_ObjectHideFlags: 0
@@ -243,6 +213,97 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!50 &1766876522410070367
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766876522410070362}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &7754942708029057914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766876522410070362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5235abb6b6efe3f499102cf457fae65e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 50
+  collisionDamage: 25
+  speed: 100
+  screenSpace: {x: 0, y: 0}
+--- !u!114 &5747372484165936710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766876522410070362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2703dc280eb06d049b07ee615e505a3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+--- !u!114 &2237753506438774680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766876522410070362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782661eb54c305941a7f453d7fcec609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: {fileID: 0}
+--- !u!114 &520025525024363998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766876522410070362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c8d65aa27ba7cd4989370ce6fd91937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: {fileID: 0}
+  bullet: {fileID: 0}
+  shootCoolDown: 0
+--- !u!114 &7124117413675139484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766876522410070362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b9348e5bbe61f499a9abaf60d51995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundBank: {fileID: 11400000, guid: e10a3dd169076a34cbeeb80fee2c2f2b, type: 2}
 --- !u!1001 &5024571933812290157
 PrefabInstance:
   m_ObjectHideFlags: 0
