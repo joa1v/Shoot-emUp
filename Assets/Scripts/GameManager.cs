@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public HpScript player;
-    public HpScript boss;
+   
     public GameObject gameOverPanel;
     public GameObject winPanel;
 
@@ -20,8 +19,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         audioSource = GetComponent<AudioSource>();
-        player.onDeath += PlayerDeath;
-        boss.onDeath += BossDeath;
 
     }
 

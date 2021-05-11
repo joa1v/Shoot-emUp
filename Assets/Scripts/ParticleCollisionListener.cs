@@ -19,14 +19,14 @@ public class ParticleCollisionListener : MonoBehaviour
         //Debug.Log(other.name);
         int numCollisionEvents = part.GetCollisionEvents(other, collisionEvents);
 
-        HpScript hp = other.GetComponent<HpScript>();
+        ShipScript ship = other.GetComponent<ShipScript>();
         int i = 0;
 
         while (i < numCollisionEvents)
         {
-            if (hp)
+            if (ship)
             {
-                hp.TakeDamage(damage);
+                ship.TakeDamage(damage);
             }
             i++;
         }

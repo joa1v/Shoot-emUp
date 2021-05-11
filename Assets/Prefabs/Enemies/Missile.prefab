@@ -10,10 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1067848218368185171}
   - component: {fileID: 1108050085838752035}
-  - component: {fileID: 5336259940210015783}
-  - component: {fileID: 8136379554484856573}
-  - component: {fileID: 1533062359484231902}
-  - component: {fileID: 831555826369574024}
   - component: {fileID: 5870024922264671244}
   - component: {fileID: 6926219527063956693}
   m_Layer: 9
@@ -88,66 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5336259940210015783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658228944336973694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3251acfe4750a3c489ec900029f1ae4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenSpace: {x: 0, y: 0}
-  halfSizeX: 0
-  halfSizeY: 0
---- !u!114 &8136379554484856573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658228944336973694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00a0295a7995baa45ae9ef77b241729f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
---- !u!114 &1533062359484231902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658228944336973694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 782661eb54c305941a7f453d7fcec609, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  collisionDamage: 50
-  speed: 15
---- !u!114 &831555826369574024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658228944336973694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11bc77a7da7af1d4abcdc95b3620217e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 10
-  currentHp: 0
-  hpBar: {fileID: 0}
-  explosionVFXPooler: {fileID: 0}
-  spawner: {fileID: 0}
 --- !u!50 &5870024922264671244
 Rigidbody2D:
   serializedVersion: 4
