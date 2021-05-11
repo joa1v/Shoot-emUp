@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Shooter))]
+[RequireComponent(typeof(ShipScript))]
 public class TimerToShoot : MonoBehaviour
 {
-    private Shooter shooter;
+    private ShipScript ship;
     public float shootCoolDown;
 
     private void OnEnable()
     {
-        shooter = GetComponent<Shooter>();
+        ship = GetComponent<ShipScript>();
         StartCoroutine(StartShoot());
     }
 
     public IEnumerator StartShoot()
     {
         yield return new WaitForSeconds(shootCoolDown);
-        shooter.Shoot();
+        ship.Shoot();
         StartCoroutine(StartShoot());
     }
 }

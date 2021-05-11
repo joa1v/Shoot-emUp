@@ -5,10 +5,11 @@ using UnityEngine;
 public class ShipScript : MonoBehaviour
 {
     public int hp;
+    public int collisionDamage;
     public ParticleSystem bullet;
     [SerializeField] private float speed;
     private Rigidbody2D rb2d;
-    private Vector2 screenSpace;
+    [HideInInspector]public Vector2 screenSpace;
     private SpriteRenderer spriteRenderer;
 
     private void Start()
@@ -32,7 +33,7 @@ public class ShipScript : MonoBehaviour
     {
         hp -= damageTaken;
         if (hp <= 0)
-            Die();  
+            Die();
     }
 
     public void Move(float movex, float moveY)
@@ -65,5 +66,15 @@ public class ShipScript : MonoBehaviour
     public void Die()
     {
         gameObject.SetActive(false);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        ShipScript ship = collision.gameObject.GetComponent<ShipScript>();
+
+        collision.gameObject.GetComponent<ShipScript>().TakeDamage(collisionDamage);
+
+        TakeDamage(collision.gameObject.GetComponent<ShipScript>().collisionDamage);
+
     }
 }

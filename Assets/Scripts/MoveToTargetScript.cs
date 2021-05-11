@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(LimitPos))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(AimToTargetScript))]
 public class MoveToTargetScript : MonoBehaviour
@@ -30,10 +29,4 @@ public class MoveToTargetScript : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        collision.transform.GetComponent<HpScript>().TakeDamage(collisionDamage);
-        GetComponent<HpScript>().TakeDamage(GetComponent<HpScript>().maxHp);
-
-    }
 }

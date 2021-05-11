@@ -2242,9 +2242,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909992c8a16548748bec5cec87b5714b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
+  hp: 100
+  collisionDamage: 100
   bullet: {fileID: 84331740}
   speed: 500
+  screenSpace: {x: 0, y: 0}
 --- !u!95 &1396837263
 Animator:
   serializedVersion: 3
@@ -2922,9 +2924,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1399896268313267725, guid: a05febcdf66d12e4faa5b8eafd5efb3f, type: 3}
+      propertyPath: margin
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2970268337018897173, guid: a05febcdf66d12e4faa5b8eafd5efb3f, type: 3}
       propertyPath: hp
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2970268337018897173, guid: a05febcdf66d12e4faa5b8eafd5efb3f, type: 3}
+      propertyPath: speed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2970268337018897173, guid: a05febcdf66d12e4faa5b8eafd5efb3f, type: 3}
+      propertyPath: collisionDamage
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8957544955366822737, guid: a05febcdf66d12e4faa5b8eafd5efb3f, type: 3}
       propertyPath: m_Name
@@ -3475,7 +3489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &2019455720
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3779,7 +3793,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 55115179995149816, guid: ba12e9189a6a1e24c8ef7522daea671d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ba12e9189a6a1e24c8ef7522daea671d, type: 3}
 --- !u!1001 &284275567295959075
 PrefabInstance:
@@ -3840,7 +3855,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8258561605393751941, guid: a2c663e963e40d945b131f87970bce93, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a2c663e963e40d945b131f87970bce93, type: 3}
 --- !u!4 &8935217184545351500 stripped
 Transform:
