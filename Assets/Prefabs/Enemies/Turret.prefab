@@ -43,9 +43,13 @@ GameObject:
   - component: {fileID: 3359839455362554117}
   - component: {fileID: 7710359623572429396}
   - component: {fileID: 6874667006251131375}
-  - component: {fileID: 5984429108969317244}
   - component: {fileID: 5546700703698210841}
   - component: {fileID: 5748552921034128227}
+  - component: {fileID: 5984429108969317244}
+  - component: {fileID: 2925077960594267734}
+  - component: {fileID: 6778670276075931482}
+  - component: {fileID: 7037411770580548051}
+  - component: {fileID: 7084907519780037575}
   m_Layer: 9
   m_Name: TurretHead
   m_TagString: Untagged
@@ -145,19 +149,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.72, y: 0.88}
   m_EdgeRadius: 0
---- !u!114 &5984429108969317244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4248260356145151659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49b9348e5bbe61f499a9abaf60d51995, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundBank: {fileID: 11400000, guid: e10a3dd169076a34cbeeb80fee2c2f2b, type: 2}
 --- !u!82 &5546700703698210841
 AudioSource:
   m_ObjectHideFlags: 0
@@ -275,6 +266,79 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5984429108969317244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4248260356145151659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b9348e5bbe61f499a9abaf60d51995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundBank: {fileID: 11400000, guid: e10a3dd169076a34cbeeb80fee2c2f2b, type: 2}
+--- !u!114 &2925077960594267734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4248260356145151659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2703dc280eb06d049b07ee615e505a3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+--- !u!114 &6778670276075931482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4248260356145151659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c8d65aa27ba7cd4989370ce6fd91937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: {fileID: 0}
+  bullet: {fileID: 550687703780732606}
+  shootCoolDown: 5
+--- !u!114 &7037411770580548051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4248260356145151659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5235abb6b6efe3f499102cf457fae65e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 150
+  shield: {fileID: 0}
+  autoEnableShield: 0
+  shieldCoolDown: 0
+  screenSpace: {x: 0, y: 0}
+--- !u!114 &7084907519780037575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4248260356145151659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 135aa25527f77394cb532601f398cd3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  collisionDamage: 0
+  hpBar: {fileID: 0}
 --- !u!1 &6513621742050756707
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,5 +481,10 @@ PrefabInstance:
 --- !u!4 &550687703780732604 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5214158585358720400, guid: 62d371536a902024bb9581105a78df15, type: 3}
+  m_PrefabInstance: {fileID: 5762362419290223404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &550687703780732606 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5214158585358720402, guid: 62d371536a902024bb9581105a78df15, type: 3}
   m_PrefabInstance: {fileID: 5762362419290223404}
   m_PrefabAsset: {fileID: 0}

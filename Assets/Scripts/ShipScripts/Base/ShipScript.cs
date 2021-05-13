@@ -4,32 +4,22 @@ using UnityEngine;
 
 public class ShipScript : MonoBehaviour
 {
-    public int hp;
-    public int collisionDamage;
+
     [SerializeField] private float speed = 150;
+    [SerializeField] private GameObject shield;
+    [SerializeField] private bool autoEnableShield;
+    [SerializeField] private float shieldCoolDown;
     private Rigidbody2D rb2d;
     [HideInInspector] public Vector2 screenSpace;
     private SpriteRenderer spriteRenderer;
-    private Color originalColor;
+    private bool shieldUP;
+
 
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        originalColor = spriteRenderer.color;
         screenSpace = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
-    }
-
-    public void TakeDamage(int damageTaken)
-    {
-        hp -= damageTaken;
-
-        if (gameObject.activeInHierarchy)
-            StartCoroutine(SetColor(Color.red));
-
-
-        if (hp <= 0)
-            Die();
     }
 
     public void Move(float movex, float moveY)
@@ -58,27 +48,22 @@ public class ShipScript : MonoBehaviour
             transform.position = new Vector3(transform.position.x, -screenSpace.y + halfSizeY, transform.position.z);
     }
 
-
-    public void Die()
+    public void EnableShield()
     {
-        gameObject.SetActive(false);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        ShipScript ship = collision.gameObject.GetComponent<ShipScript>();
-
-        collision.gameObject.GetComponent<ShipScript>().TakeDamage(collisionDamage);
-
-        TakeDamage(collision.gameObject.GetComponent<ShipScript>().collisionDamage);
-
+        shield.SetActive(true);
     }
 
 
-    IEnumerator SetColor(Color _color)
+    public void StartAutoEnable()
     {
-        spriteRenderer.color = _color;
-        yield return new WaitForSeconds(.1f);
-        spriteRenderer.color = originalColor;
+        if (gameObject.activeInHierarchy)
+            StartCoroutine(AutoEnableShield());
     }
+
+    IEnumerator AutoEnableShield()
+    {
+        yield return new WaitForSeconds(shieldCoolDown);
+        shield.SetActive(true);
+    }
+
 }

@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 55115179995149813}
   - component: {fileID: 55115179995149819}
   - component: {fileID: 55115179995149818}
-  - component: {fileID: 55115179995149816}
   - component: {fileID: 55115179995149817}
   - component: {fileID: 55115179995149822}
+  - component: {fileID: 6919770933008797521}
+  - component: {fileID: 9106855480687296011}
   m_Layer: 8
   m_Name: ShieldParticleSystem
   m_TagString: Untagged
@@ -4815,23 +4816,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &55115179995149816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 55115179995149812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11bc77a7da7af1d4abcdc95b3620217e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 50
-  currentHp: 0
-  hpBar: {fileID: 0}
-  explosionVFXPooler: {fileID: 0}
-  spawner: {fileID: 0}
 --- !u!58 &55115179995149817
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4869,3 +4853,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &6919770933008797521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55115179995149812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88bf8e0f51a0924f8037fc4efb31a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9106855480687296011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55115179995149812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 135aa25527f77394cb532601f398cd3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  collisionDamage: 50
+  hpBar: {fileID: 0}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
-    [HideInInspector]public ShipScript ship;
+    protected ShipScript ship;
 
     private void Start()
     {

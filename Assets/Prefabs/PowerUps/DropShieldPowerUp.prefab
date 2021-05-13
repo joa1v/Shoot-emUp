@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8048833765251592207}
   - component: {fileID: 8048833765251592200}
   - component: {fileID: 8048833765251592201}
-  - component: {fileID: 8048833765251592206}
+  - component: {fileID: 3341847619050381338}
   m_Layer: 0
   m_Name: DropShieldPowerUp
   m_TagString: Untagged
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
---- !u!114 &8048833765251592206
+--- !u!114 &3341847619050381338
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,8 +119,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8048833765251592204}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cf7fefe172fc5c4ca0d0a54f7623142, type: 3}
+  m_Script: {fileID: 11500000, guid: b0835d957395f0e4c94325bcca236830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletID: 0
-  isShield: 1
+  powerUpID: 0
+  type: 1

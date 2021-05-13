@@ -41,23 +41,26 @@ public class EnemySideToSideMovement : MovementScript
 
     private void FixedUpdate()
     {
-
-        if (type == MovementDirection.HORIZONTAL)
+        if (ship)
         {
-            if (moveRight)
-                ship.Move(1, 0);
-            if (!moveRight)
-                ship.Move(-1, 0);
+            if (type == MovementDirection.HORIZONTAL)
+            {
+                if (moveRight)
+                    ship.Move(1, 0);
+                if (!moveRight)
+                    ship.Move(-1, 0);
+            }
+
+
+            if (type == MovementDirection.VERTICAL)
+            {
+                if (moveuP)
+                    ship.Move(0, 1);
+                if (!moveuP)
+                    ship.Move(0, -1);
+            }
         }
 
-
-        if (type == MovementDirection.VERTICAL)
-        {
-            if (moveuP)
-                ship.Move(0, 1);
-            if (!moveuP)
-                ship.Move(0, -1);
-        }
     }
 
 }

@@ -42,4 +42,12 @@ public class SFXPlayer : MonoBehaviour
             audioSource.Play();
         }
     }
+
+    public void PlayExplosionSFX()
+    {
+        if (Time.timeScale > 0)
+        {
+            AudioSource.PlayClipAtPoint(soundBank.explosionSFX.audioClips[Random.Range(0, soundBank.explosionSFX.audioClips.Length)], transform.position, soundBank.explosionSFX.volume);
+        }
+    }
 }

@@ -8,5 +8,6 @@ public class SoundBank : ScriptableObject
     public SoundData shootSFX;
     public SoundData powerUpSFX;
     public SoundData dropSFX;
+    public SoundData explosionSFX;
 
 }
