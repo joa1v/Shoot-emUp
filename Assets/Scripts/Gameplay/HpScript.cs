@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class HpScript : MonoBehaviour
 {
     [SerializeField] private int hp;
-    private int curretHp;
+    [HideInInspector] public int curretHp;
     public int collisionDamage;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     private SFXPlayer sFXPlayer;
-
+    private ObjectPooler objectPooler;
+    private ShieldScript shieldScript;
     [SerializeField] private Slider hpBar;
 
     private void Start()
@@ -19,10 +20,16 @@ public class HpScript : MonoBehaviour
         curretHp = hp;
         if (hpBar)
             hpBar.maxValue = hp;
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         sFXPlayer = GetComponent<SFXPlayer>();
+        shieldScript = GetComponent<ShieldScript>();
+
         if (spriteRenderer)
             originalColor = spriteRenderer.color;
+
+        objectPooler = ObjectPooler.Instance;
+
     }
 
     private void Update()
@@ -50,10 +57,18 @@ public class HpScript : MonoBehaviour
         if (sFXPlayer)
             sFXPlayer.PlayExplosionSFX();
 
+        //reseta a cor
+        if (spriteRenderer)
+            spriteRenderer.color = originalColor;
+
+        if (shieldScript)
+            shieldScript.StartAutoEnable();
+
+
         //reseta o hp
         curretHp = hp;
-        //reseta a cor
-        spriteRenderer.color = originalColor;
+
+        objectPooler.SpawnFromPool("ExplosionVFX", transform.position, transform.rotation);
 
         gameObject.SetActive(false);
     }

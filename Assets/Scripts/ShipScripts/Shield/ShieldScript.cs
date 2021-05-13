@@ -11,8 +11,9 @@ public class ShieldScript : MonoBehaviour
         ship = GetComponentInParent<ShipScript>();
     }
 
-    private void OnDisable()
+    public void StartAutoEnable()
     {
         ship.StartAutoEnable();
+
     }
 }

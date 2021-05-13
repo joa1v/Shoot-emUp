@@ -6,8 +6,8 @@ public class ShipScript : MonoBehaviour
 {
 
     [SerializeField] private float speed = 150;
-    [SerializeField] private GameObject shield;
-    [SerializeField] private bool autoEnableShield;
+    public GameObject shield;
+    public bool autoEnableShield;
     [SerializeField] private float shieldCoolDown;
     private Rigidbody2D rb2d;
     [HideInInspector] public Vector2 screenSpace;
